@@ -4,8 +4,8 @@ const path = require('path')
 const PORT = process.argv[2] || 3050
 const app = express()
 
-app.use('/js', express.static(path.resolve(__dirname, 'js')))
-app.use('/css', express.static(path.resolve(__dirname, 'css')))
+app.use('/css-collection/js', express.static(path.resolve(__dirname, 'js')))
+app.use('/css-collection/css', express.static(path.resolve(__dirname, 'css')))
 app.use('/css-collection/pages', express.static(path.resolve(__dirname, 'pages')))
 
 app.get('/css-collection/*', (_, res) => {
