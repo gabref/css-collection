@@ -17,7 +17,8 @@ const handleLocation = async () => {
 
     document.title = route.title
 
-    const html = await fetch(route.htmlPath)
+    const htmlPath = '/css-collection' + route.htmlPath
+    const html = await fetch(htmlPath)
         .then((data) => data.text())
     document.querySelector("#app").innerHTML = html
 
