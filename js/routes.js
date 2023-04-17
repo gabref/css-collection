@@ -15,6 +15,26 @@ const routes = new Map([
         title: 'About | Css Collection',
         description: 'About Page'
     }],
+    ['/cards', {
+        htmlPath: baseUrl + 'collection/cards/product-card-ui-design/index.html',
+        title: 'About | Css Collection',
+        description: 'About Page'
+    }],
+    ['/logos/insta', {
+        htmlPath: baseUrl + 'collection/logos/insta/index.html',
+        title: 'About | Css Collection',
+        description: 'About Page'
+    }],
+    ['/carousels/filled-carousel/', {
+        htmlPath: baseUrl + 'collection/carousels/filled-carousel/index.html',
+        title: 'About | Css Collection',
+        description: 'About Page'
+    }],
+    ['/popups/filled-carousel/', {
+        htmlPath: baseUrl + 'collection/popups/index.html',
+        title: 'About | Css Collection',
+        description: 'About Page'
+    }],
 ])
 
 export default routes
