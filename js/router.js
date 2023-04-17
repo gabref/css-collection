@@ -13,7 +13,6 @@ const handleLocation = async () => {
     const path = window.location.pathname
 
     const route = routes.get(path.replace('/css-collection', '')) || routes.get(404)
-    console.log(route)
 
     document.title = route.title
 
