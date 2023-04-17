@@ -11,7 +11,6 @@ const route = (event) => {
 // called every time change location happens
 const handleLocation = async () => {
     const path = window.location.pathname
-    console.log('hL path', path)
 
     const route = routes.get(path) || routes.get(404)
 
