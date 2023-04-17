@@ -12,18 +12,32 @@ const route = (event) => {
 const handleLocation = async () => {
     const path = window.location.pathname
 
-    const route = routes.get(path) || routes.get(404)
+    const route = routes.get(path.replace('/css-collection', '')) || routes.get(404)
+    console.log(route)
 
     document.title = route.title
 
-    const htmlPath = '/css-collection' + route.htmlPath
-    const html = await fetch(htmlPath)
-        .then((data) => data.text())
+    const html = await fetch(route.htmlPath)
+        .then(async (data) => {
+            return await data.text()
+        })
     document.querySelector("#app").innerHTML = html
 
     document
         .querySelector('meta[name="description"]')
         .setAttribute("content", route.description)
+
+    // css
+    const head = document.getElementsByTagName('head')[0]
+    const secondLink = document.getElementsByTagName('link')[1]
+    if (secondLink)
+        return secondLink.href = route.htmlPath.replace('index.html', 'style.css')
+
+    const link = document.createElement('link')
+    link.rel = 'stylesheet'
+    link.type = 'text/css'
+    link.href = route.htmlPath.replace('index.html', 'style.css')
+    head.append(link)
 }
 
 // back and forward button
